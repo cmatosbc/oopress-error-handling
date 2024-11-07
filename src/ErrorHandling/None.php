@@ -2,20 +2,36 @@
 
 namespace Oopress\ErrorHandling;
 
+/**
+ * Class representing the absence of a value.
+ */
 class None extends Option
 {
-    public function isSome(): bool
-    {
+    /**
+     * {@inheritdoc}
+     */
+    public function isSome(): bool {
         return false;
     }
-    
-    public function isNone(): bool
-    {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isNone(): bool {
         return true;
     }
-    
+
+    /**
+     * {@inheritdoc}
+     *
+     * @throws Exception Always throws an exception when called on None.
+     */
     public function unwrap()
     {
-        throw new SomeNoneException("Called unwrap on a None value");
+        try {
+            throw new SomeNoneException("Called unwrap on a None value");
+        } catch (SomeNoneException $e) { 
+            error_log("Caught exception inside unwrap: " . $e->getMessage() . PHP_EOL);
+        }
     }
 }

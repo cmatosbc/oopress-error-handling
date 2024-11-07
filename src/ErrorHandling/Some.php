@@ -2,12 +2,22 @@
 
 namespace Oopress\ErrorHandling;
 
+/**
+ * Class representing a present value.
+ */
 class Some extends Option
 {
+    /**
+     * @var mixed The wrapped value.
+     */
     private $value;
-    
-    public function __construct($value)
-    {
+
+    /**
+     * Constructor for Some.
+     *
+     * @param mixed $value The value to be wrapped.
+     */
+    public function __construct($value) {
         $this->value = $value;
     }
     
