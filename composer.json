@@ -1,0 +1,21 @@
+{
+    "name": "oopress/error-handling",
+    "description": "Better error handling routines for Wordpress and agnostic PHP apps.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "cmatosbc",
+            "email": "carlosarturmatos1977@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Oopress\\": "src/"
+        },
+        "files": [
+            "src/ErrorHandling/functions.php"
+        ]
+    }
+}
